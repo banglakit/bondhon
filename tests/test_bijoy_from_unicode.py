@@ -362,11 +362,11 @@ def test_individual_chars(given, expected):
 ])
 def test_conjugated(given, expected):
     assert bijoy_classic.from_unicode(given) == expected
-#
-#
-# @pytest.mark.parametrize('given,expected', [
-#     ('কুরুক্ষেত্র', 'Kzi“‡¶Î'),
-# ])
-# def test_words(given, expected):
-#     assert bijoy_classic.from_unicode(given) == expected
-#
+
+
+@pytest.mark.parametrize('given,expected', [
+    ('কুরুক্ষেত্র', 'Kzi“‡¶Î'),
+])
+def test_words(given, expected):
+    assert bijoy_classic.from_unicode(given) == expected
+
