@@ -491,7 +491,7 @@ def replace_conj(s):
 
 
 def swap_kar_location(s):
-    return SWAP_BEFORE_KARS.sub('\g<kar>\g<char>', s)
+    return SWAP_BEFORE_KARS.sub('\\g<kar>\\g<char>', s)
 
 
 def fix_unicode(s: str):
