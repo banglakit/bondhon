@@ -3,6 +3,10 @@ import pytest
 from bondhon import bijoy_classic
 
 
+def test_swap_kar_location():
+    assert bijoy_classic.swap_kar_location('আমি') == 'আিম'
+
+
 @pytest.mark.parametrize('given,expected', [
     ('১', '1'),
     ('২', '2'),
@@ -65,7 +69,7 @@ def test_numbers(given, expected):
     ('ষ', 'l'),
     ('স', 'm'),
     ('হ', 'n'),
-    ('া', 'vw'),
+    ('া', 'v'),
     ('ি', 'w'),
     ('ী', 'x')
 ])
@@ -362,11 +366,32 @@ def test_individual_chars(given, expected):
 ])
 def test_conjugated(given, expected):
     assert bijoy_classic.from_unicode(given) == expected
-#
-#
-# @pytest.mark.parametrize('given,expected', [
-#     ('কুরুক্ষেত্র', 'Kzi“‡¶Î'),
-# ])
-# def test_words(given, expected):
-#     assert bijoy_classic.from_unicode(given) == expected
-#
+
+
+@pytest.mark.parametrize('given,expected', [
+    ('কোন', '†Kvb'),
+    ('মৌনতা', '†gŠbZv'),
+])
+def test_surrounding_kars(given, expected):
+    assert bijoy_classic.from_unicode(given) == expected
+
+
+@pytest.mark.parametrize('given,bijoy', [
+    ('কুরুক্ষেত্র', 'Kzi“‡¶Î'),
+    ('কিংকর্তব্যবিমূঢ়', 'wKsKZ©e¨weg‚‚p'),
+    ('অনিরুদ্ধ', 'Awbi“×'),
+    ('বাংলাদেশ', 'evsjv‡`k'),
+])
+def test_words(given, bijoy):
+    assert bijoy_classic.from_unicode(given) == bijoy
+
+
+@pytest.mark.parametrize('given,bijoy', [
+    ('নাকের নাসারন্ধ্র দিয়ে শ্বাসক্রিয়ার বায়ু প্রবেশ ও প্রস্থান করে।',
+     'bv‡Ki bvmviÜª w`‡q k¦vmwµqvi evqz cÖ‡ek I cÖ¯’vb K‡i|'),
+
+    ('আমাদের দেশে যে একবার বিবাহ করিয়াছে বিবাহ সম্বন্ধে তাহার মনে আর কোন উদ্বেগ থাকে না।',
+     'Avgv‡`i †`‡k †h GKevi weevn Kwiqv‡Q weevn m¤^‡Ü Zvnvi g‡b Avi †Kvb D‡ØM _v‡K bv|'),
+])
+def test_sentences(given, bijoy):
+    assert bijoy_classic.from_unicode(given) == bijoy
