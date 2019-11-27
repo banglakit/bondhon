@@ -1,6 +1,9 @@
 import re
 
-from.utils import swap_kar_location, fix_unicode
+from .utils import swap_kar_location, fix_unicode
+
+
+__all__ = ['from_unicode']
 
 
 SORTED_CONJ_RULES = [

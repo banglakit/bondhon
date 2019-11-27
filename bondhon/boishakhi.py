@@ -1,5 +1,8 @@
-from .bijoy_classic import fix_unicode
-from .bijoy_classic import swap_kar_location
+from .utils import fix_unicode
+from .utils import swap_kar_location
+
+__all__ = ['from_unicode']
+
 
 CHAR_TABLE = {
     2437: 'A',
