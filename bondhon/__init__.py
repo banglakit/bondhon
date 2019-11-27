@@ -2,9 +2,21 @@ from typing import Tuple, Callable, Iterable
 
 from bondhon import bijoy_classic
 
+
 Conversions = Iterable[Tuple[str, str, Callable[[str], str]]]
 
+
+def return_same_value(sample_text: str):
+    return sample_text
+
+
 AVAILABLE_CONVERSIONS: Conversions = (
+    ('utf-8',     'utf-8',     return_same_value),
+    ('bijoy',     'bijoy',     return_same_value),
+    ('boishakhi', 'boishakhi', return_same_value),
+    ('bongshi',   'bongshi',   return_same_value),
+    ('bornosoft', 'bornosoft', return_same_value),
+
     ('utf-8', 'bijoy', bijoy_classic.from_unicode),
 )
 

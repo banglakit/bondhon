@@ -476,11 +476,15 @@ RULES = \
     NUM_RULES + \
     REJOIN_RULES
 
-SWAP_BEFORE_KARS = re.compile(r'(?P<char>[^{kars}])(?P<kar>[{kars}])'
-                              .format(kars=''.join([l for l, _ in KAR_BEFORE_CHAR_RULES])))
+SWAP_BEFORE_KARS = re.compile(
+    r'(?P<char>[^{kars}])(?P<kar>[{kars}])'
+    .format(kars=''.join([l for l, _ in KAR_BEFORE_CHAR_RULES]))
+)
 
-PLACE_SURROUNDING_KARS = re.compile(r'(?P<char>[^{kars}])(?P<kar>[{kars}])'
-                                    .format(kars=''.join([l for l in KAR_AROUND_CHAR_RULES])))
+PLACE_SURROUNDING_KARS = re.compile(
+    r'(?P<char>[^{kars}])(?P<kar>[{kars}])'
+    .format(kars=''.join([l for l in KAR_AROUND_CHAR_RULES]))
+)
 
 
 def replace_conj(s):

@@ -17,18 +17,19 @@ $ pip install git+https://github.com/banglakit/bondhon.git
 ## Basic Usage
 
 ```python
-import bondhon
+>>> import bondhon
 
-bondhon.convert('utf-8', 'bijoy', 'আমি বাংলায় গান গাই।')
+>>> bondhon.convert('utf-8', 'bijoy', 'আমি বাংলায় গান গাই।')
+'Avwg evsjvq Mvb MvB|'  # Output in Bijoy ASCII / Classic
 ```
 
 ## Development Status
 
-Currently in active development.
+Currently in active development. (From: Col 1, To: Row 1)
 
 |           | Bijoy | Boishakhi | Bongshi | BornoSoft |        Unicode       |
 |:---------:|:-----:|:---------:|:-------:|:---------:|:--------------------:|
-|   Bijoy   |   -   |           |         |           | In Progress, Working |
+|   Bijoy   |   -   |           |         |           |           ✔          |
 | Boishakhi |       |     -     |         |           |                      |
 |  Bongshi  |       |           |    -    |           |                      |
 | BornoSoft |       |           |         |     -     |                      |

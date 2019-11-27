@@ -390,8 +390,8 @@ def test_words(given, bijoy):
     ('নাকের নাসারন্ধ্র দিয়ে শ্বাসক্রিয়ার বায়ু প্রবেশ ও প্রস্থান করে।',
      'bv‡Ki bvmviÜª w`‡q k¦vmwµqvi evqz cÖ‡ek I cÖ¯’vb K‡i|'),
 
-    ('আমাদের দেশে যে একবার বিবাহ করিয়াছে বিবাহ সম্বন্ধে তাহার মনে আর কোন উদ্বেগ থাকে না।',
-     'Avgv‡`i †`‡k †h GKevi weevn Kwiqv‡Q weevn m¤^‡Ü Zvnvi g‡b Avi †Kvb D‡ØM _v‡K bv|'),
+    ('আমাদের দেশে যে একবার বিবাহ করিয়াছে বিবাহ সম্বন্ধে তাহার মনে আর কোন উদ্বেগ থাকে না।',  # noqa: E501
+     'Avgv‡`i †`‡k †h GKevi weevn Kwiqv‡Q weevn m¤^‡Ü Zvnvi g‡b Avi †Kvb D‡ØM _v‡K bv|'),  # noqa: E501
 ])
 def test_sentences(given, bijoy):
     assert bijoy_classic.from_unicode(given) == bijoy
