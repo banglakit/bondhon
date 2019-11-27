@@ -1,6 +1,6 @@
 # bondhon
 
-[![CircleCI](https://circleci.com/gh/banglakit/bondhon/tree/master.svg?style=svg)](https://circleci.com/gh/banglakit/bondhon/tree/master)
+[![Test Status](https://github.com/banglakit/bondhon/workflows/Bondhon%20Tests/badge.svg)](https://github.com/banglakit/bondhon/actions)
 
 Encoding conversion library for the Bengali (বাংলা) script.
 
