@@ -1,5 +1,11 @@
 import re
 
+from .utils import swap_kar_location, fix_unicode
+
+
+__all__ = ['from_unicode']
+
+
 SORTED_CONJ_RULES = [
     ('ন্ত্র্য', 'š—¨©'),
     ('ক্ষ্ম্য', '²¨'),
@@ -336,12 +342,8 @@ SORTED_CONJ_RULES = [
 
     ('ৎল', 'rj')]
 
-FIX_UNICODE = [
-    ('ড়্গ', 'ÿ'),
-    ('য়', 'য়'),
-    ('ব়', 'র'),
-    ('ঢ়', 'ঢ়'),
-    ('ড়', 'ড়'),
+FIX_ODD_CHARS = [
+    ('ড়্গ', 'ÿ')
 ]
 
 CHAR_RULES = [
@@ -476,11 +478,6 @@ RULES = \
     NUM_RULES + \
     REJOIN_RULES
 
-SWAP_BEFORE_KARS = re.compile(
-    r'(?P<char>[^{kars}])(?P<kar>[{kars}])'
-    .format(kars=''.join([l for l, _ in KAR_BEFORE_CHAR_RULES]))
-)
-
 PLACE_SURROUNDING_KARS = re.compile(
     r'(?P<char>[^{kars}])(?P<kar>[{kars}])'
     .format(kars=''.join([l for l in KAR_AROUND_CHAR_RULES]))
@@ -494,12 +491,8 @@ def replace_conj(s):
     return s
 
 
-def swap_kar_location(s):
-    return SWAP_BEFORE_KARS.sub('\\g<kar>\\g<char>', s)
-
-
-def fix_unicode(s: str):
-    for lookup, replacement in FIX_UNICODE:
+def fix_odd_chars(s: str):
+    for lookup, replacement in FIX_ODD_CHARS:
         s = s.replace(lookup, replacement)
 
     return s
@@ -516,6 +509,7 @@ def handle_surrounding_char(s: str):
 
 
 def from_unicode(s: str) -> str:
+    s = fix_odd_chars(s)
     s = fix_unicode(s)
     s = replace_conj(s)
     s = swap_kar_location(s)

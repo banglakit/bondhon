@@ -30,7 +30,7 @@ Currently in active development. (From: Col 1, To: Row 1)
 |           | Bijoy | Boishakhi | Bongshi | BornoSoft |        Unicode       |
 |:---------:|:-----:|:---------:|:-------:|:---------:|:--------------------:|
 |   Bijoy   |   -   |           |         |           |           ✔          |
-| Boishakhi |       |     -     |         |           |                      |
+| Boishakhi |       |     -     |         |           |      In Progress     |
 |  Bongshi  |       |           |    -    |           |                      |
 | BornoSoft |       |           |         |     -     |                      |
 |  Unicode  |       |           |         |           |           -          |
