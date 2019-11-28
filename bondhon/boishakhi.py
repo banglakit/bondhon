@@ -69,6 +69,8 @@ CHAR_TABLE = {
     2543: '9'
 }
 
+# TODO: Add khiyo transformation
+
 
 def from_unicode(s: str) -> str:
     s = fix_unicode(s)
