@@ -20,7 +20,8 @@ def test_numbers(given, expected):
 
 
 @pytest.mark.parametrize('given,expected', [
-    ('আমি বাংলায় গান গাই', 'Awxi gwvlwt Mwd MwB')
+    ('আমি বাংলায় গান গাই', 'Awxi gwvlwt Mwd MwB'),
+    ('আমি বাংলায় কথা কই।', 'Awxi gwvlwt Kaw KB„')
 ])
 def test_alpha_sentence(given, expected):
     assert boishakhi.from_unicode(given) == expected
